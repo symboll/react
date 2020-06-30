@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 
-class Foo extends React.PureComponent {
+class Baz extends React.PureComponent {
   render () {
     console.log('class Component Foo render')
     return (
@@ -24,7 +24,7 @@ const Bar = memo(function (props) {
 //   )
 // }
 
-class Mem extends React.Component {
+class MemoComponent extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -36,11 +36,11 @@ class Mem extends React.Component {
     return (
       <React.Fragment>
         <button onClick={()=> this.setState({ n: n+1 })}>Btn</button>
-        <Foo />
+        <Baz />
         <Bar />
       </React.Fragment>
     )
   }
 }
 
-export default Mem
+export default MemoComponent

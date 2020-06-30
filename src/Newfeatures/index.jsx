@@ -1,20 +1,20 @@
 import React from 'react'
 
-import Con from './context'
-import Cont from './contextType'
-import Laz from './lazy'
-import Mem from './memo'
+import CoComponent from './context'
+import CtComponent from './contextType'
+import LazyComponent from './lazy'
+import MemoComponent from './memo'
 
 function Newfeatures () {
   return (
     <React.Fragment>
-    <Con />
+    <CoComponent />
     
-    <Cont />
+    <CtComponent />
 
-    {/* <Laz /> */}
+    <LazyComponent />
 
-    <Mem />
+    <MemoComponent />
     </React.Fragment>
   )
 }

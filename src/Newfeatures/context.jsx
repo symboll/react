@@ -4,7 +4,7 @@ import React, { createContext } from 'react'
 const BatteryContext = createContext()
 const { Provider, Consumer } = createContext()
 
-class Con extends React.Component {
+class CoComponent extends React.Component {
   constructor (props) {
     super(props)
 
@@ -53,4 +53,4 @@ function Bar () {
 
 
 
-export default Con;
+export default CoComponent;

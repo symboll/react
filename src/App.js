@@ -9,6 +9,7 @@ import store from './store'
 import TodoList from './T_immutable';
 import Hoc from './Hoc'
 import Newfeatures from './Newfeatures'
+import Hook from './Hook'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={TodoList} />
           <Route path='/hoc' component={Hoc} />
+          <Route path='/hook' component={Hook} />
           <Route path='/newfeatures' component={Newfeatures} />
         </Switch>
       </HashRouter>

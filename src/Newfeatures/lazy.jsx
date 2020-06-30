@@ -3,7 +3,7 @@ import React, { Component, lazy, Suspense } from 'react'
 
 const About =  lazy(()=> import(/* webpackChunkName: "About" */'./about.jsx'))
 
-class Laz extends Component {
+class LazyComponent extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -36,4 +36,4 @@ class Laz extends Component {
 
 }
 
-export default Laz;
+export default LazyComponent;

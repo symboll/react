@@ -2,7 +2,7 @@ import React, { createContext } from 'react'
 
 const BatteryContext = createContext()
 
-class Cont extends React.Component {
+class CtComponent extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -42,4 +42,4 @@ class Bar extends React.Component {
     )
   }
 }
-export default Cont;
+export default CtComponent;
