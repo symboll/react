@@ -5,8 +5,8 @@ const BatteryContext = createContext()
 const { Provider, Consumer } = createContext()
 
 class CoComponent extends React.Component {
-  constructor (props) {
-    super(props)
+  constructor () {
+    super()
 
     this.state = {
       n: 20,

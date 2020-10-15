@@ -25,16 +25,9 @@ const Bar = memo(
   }
 )
 
-// function Bar () {
-//   console.log('function Component Bar render')
-//   return (
-//     <div>s</div>
-//   )
-// }
-
 class MemoComponent extends React.Component {
-  constructor (props) {
-    super(props)
+  constructor () {
+    super()
     this.state = {
       n: 34,
       m: 23
@@ -44,10 +37,10 @@ class MemoComponent extends React.Component {
     const { n,m } = this.state
     return (
       <React.Fragment>
-        <button onClick={()=> this.setState({ n: n+1 })}>Btn:{n}</button>
-        <button onClick={()=> this.setState({ m: m+1 })}>Btn:{m}</button>
+        <button onClick={()=> this.setState({ n: n+1 })}>Class Component Btn:{n}</button>
+        <button onClick={()=> this.setState({ m: m+1 })}>function Component Btn:{m}</button>
         <Baz n={n}/>
-        <Bar n={n}/>
+        <Bar n={m}/>
       </React.Fragment>
     )
   }

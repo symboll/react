@@ -4,8 +4,8 @@ import React, { Component, lazy, Suspense } from 'react'
 const About =  lazy(()=> import(/* webpackChunkName: "About" */'./about.jsx'))
 
 class LazyComponent extends Component {
-  constructor (props) {
-    super(props)
+  constructor () {
+    super()
     this.state = {
       hasError: false
     }

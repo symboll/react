@@ -3,8 +3,8 @@ import React, { createContext } from 'react'
 const BatteryContext = createContext()
 
 class CtComponent extends React.Component {
-  constructor (props) {
-    super(props)
+  constructor () {
+    super()
     this.state = {
       n: 40
     }
@@ -28,8 +28,8 @@ function Middle () {
 class Bar extends React.Component {
   static contextType = BatteryContext
 
-  constructor (props) {
-    super(props)
+  constructor () {
+    super()
     this.state = {
 
     }
