@@ -21,8 +21,10 @@ function mapDispatchToProps (dispatch) {
     handleChangeInputValue (e) {
       dispatch(Action.inputChangeAction(e.target.value))
     },
-    handleClick () {
-      dispatch(Action.addItemAction())
+    handleClick (value) {
+      if(value.trim() !== '') {
+        dispatch(Action.addItemAction())
+      }
     },
     handleDeleteItem (index) {
       dispatch(Action.deleteListItemAction(index))
@@ -37,7 +39,7 @@ const TodoList = memo(function (props) {
     <div>
       <div className="header_wrapper">
         <Input value={value} onChange={handleChangeInputValue}></Input>
-        <Button type="primary" onClick={ handleClick}>提交</Button>
+        <Button type="primary" onClick={ ()=> handleClick(value)}>提交</Button>
       </div>
 
       

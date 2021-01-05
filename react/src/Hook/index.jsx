@@ -4,7 +4,7 @@ import Sider from './useEffect'
 import Cross from './useContext'
 import Optimi from './useMemo'
 import Pool from './useRef'
-
+import Custom from './custom'
 
 function Hook () {
   return (
@@ -12,8 +12,9 @@ function Hook () {
       {/* <Count />
       <Sider />
       <Cross />
-      <Optimi /> */}
-      <Pool />
+      <Optimi /> 
+      <Pool /> */}
+      <Custom />
     </React.Fragment>
   )
 }
