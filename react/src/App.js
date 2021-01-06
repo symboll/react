@@ -5,13 +5,13 @@ import { Provider } from 'react-redux'
 import store from './store'
 
 // import TodoList from './T_redux'
-// import TodoList from './T_react-redux'
-import TodoList from './T_immutable';
+import TodoList from './T_react-redux'
+// import TodoList from './T_immutable';
 import Hoc from './Hoc'
 import Newfeatures from './Newfeatures'
 import Hook from './Hook'
 import EventEmitter from './eventEmitter'
-
+import Test from './Test'
 function App() {
   return (
     <Provider store={store}>
@@ -22,6 +22,7 @@ function App() {
           <Route path='/hook' component={Hook} />
           <Route path='/newfeatures' component={Newfeatures} />
           <Route path='/eventEmitter' component={ EventEmitter } />
+          <Route path='/test' component={ Test } />
         </Switch>
       </BrowserRouter>
     </Provider>

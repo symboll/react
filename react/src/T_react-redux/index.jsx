@@ -11,7 +11,8 @@ const ListItem = List.Item
 function mapStateToProps(state) {
   return {
     value: state.todo.value,
-    list: state.todo.list
+    list: state.todo.list,
+    asyncInfo: state.todo.asyncInfo
   };
 }
 
@@ -26,13 +27,16 @@ function mapDispatchToProps (dispatch) {
     },
     handleDeleteItem (index) {
       dispatch(Action.deleteListItemAction(index))
+    },
+    handleGetAsyncInfo() {
+      dispatch(Action.getAsyncInfo())
     }
   }
 }
 
 const TodoList = memo(function (props) {
-  const { value,list } = props
-  const {handleChangeInputValue, handleClick, handleDeleteItem } = props
+  const { value,list, asyncInfo } = props
+  const {handleChangeInputValue, handleClick, handleDeleteItem, handleGetAsyncInfo } = props
   return (
     <div>
       <div className="header_wrapper">
@@ -54,6 +58,11 @@ const TodoList = memo(function (props) {
           </ListItem>
         )}
       />
+
+      <Button onClick={handleGetAsyncInfo} type="primary" className="mt_10">获取异步信息</Button>
+      <div>
+        { asyncInfo.map(item => <div key={item._id}>{item.title}</div>) }
+      </div>
     </div>
   );
 })

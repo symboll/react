@@ -28,12 +28,6 @@ function Middle () {
 class Bar extends React.Component {
   static contextType = BatteryContext
 
-  constructor () {
-    super()
-    this.state = {
-
-    }
-  }
 
   render () {
     const battery = this.context

@@ -1,7 +1,8 @@
 import * as Types from './actionTypes'
 const defaultState = {
   value: '',
-  list: []
+  list: [],
+  asyncInfo: []
 }
 
 export default (state = defaultState, action)=> {
@@ -28,6 +29,12 @@ export default (state = defaultState, action)=> {
       return {
         ...state,
         list
+      }
+    }
+    case Types.SET_ASYNC_INFO: {
+      return {
+        ...state,
+        asyncInfo: action.value
       }
     }
     default: 
