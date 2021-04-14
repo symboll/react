@@ -5,7 +5,7 @@ import React , { useEffect, useState } from 'react'
 // Update之后
 // Unmount之前
 
-function Sider () {
+function Effect () {
   const [count, setCount] = useState(0)
   const [size, setSize] = useState({
     height: document.documentElement.clientHeight,
@@ -55,4 +55,4 @@ function Sider () {
   )
 }
 
-export default Sider
+export default Effect

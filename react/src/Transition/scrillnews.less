@@ -1,0 +1,46 @@
+.wrap{
+  margin-top: 220px;
+  height: 110px;
+  border: 1px solid  red;
+  overflow: hidden;
+}
+
+.test {
+  // background: pink;
+  animation: animations 6s linear infinite forwards;
+}
+.test2 {
+  // background: greenyellow;
+  animation: animations2 6s linear 2s infinite forwards;
+}
+.test3 {
+  // background: greenyellow;
+  animation: animations3 6s linear 4s infinite forwards;
+}
+
+@keyframes animations {
+  0% { 
+    transform: translate(0, 110px); 
+  }
+  100% { 
+    transform: translate(0, -220px);
+  }
+}
+
+@keyframes animations2 {
+  0% { 
+    transform: translate(0,0); 
+  }
+  100% { 
+    transform: translate(0, -330px);
+  }
+}
+
+@keyframes animations3 {
+  0% { 
+    transform: translate(0, -110px); 
+  }
+  100% { 
+    transform: translate(0, -440px);
+  }
+}

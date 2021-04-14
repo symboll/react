@@ -4,26 +4,25 @@ import React, { createContext } from 'react'
 const BatteryContext = createContext()
 const { Provider, Consumer } = createContext()
 
-class CoComponent extends React.Component {
+class Content extends React.Component {
   constructor () {
     super()
-
     this.state = {
       n: 20,
-      m: 101
+      m: 100
     }
   }
   render () {
     const { n, m } = this.state
     return (
-      <div>
-        <button onClick={()=>this.setState({ n: n+1 })}>change Btn</button>
+      <>
+        <button onClick={()=>this.setState({ n: n+1, m: m+2 })}>change Btn</button>
         <Provider value={n}> 
           <BatteryContext.Provider value={m}>
             <Middle />
           </BatteryContext.Provider>
         </Provider>
-      </div>
+      </>
       
     )
   }
@@ -31,21 +30,21 @@ class CoComponent extends React.Component {
 
 function Middle () {
   return (
-    <Bar />
+    <Battery />
   )
 }
 
-function Bar () {
+function Battery () {
   return (
     <Consumer>
       { n => <div> 
-              <BatteryContext.Consumer>
-                {
-                  m => <p>m: {m}</p>
-                }
-              </BatteryContext.Consumer>
-                n: {n}
-            </div> 
+          <BatteryContext.Consumer>
+            {
+              m => <p>m: {m}</p>
+            }
+          </BatteryContext.Consumer>
+            n: {n}
+        </div> 
       }
     </Consumer>
   )
@@ -53,4 +52,4 @@ function Bar () {
 
 
 
-export default CoComponent;
+export default Content;

@@ -7,30 +7,30 @@
 // 1. 获取子组件或者DOM节点的句柄
 // 2. 渲染周期之间共享数据的存储
 
-import React, { useState, useRef, useEffect, useCallback, useMemo, memo} from 'react'
+import React, { useState, useRef, useEffect, useCallback, useMemo, memo, forwardRef} from 'react'
 
 
 
-// const Middle = memo(function (props) {
-//   console.log('middle component render !')
-//   return (
-//     <div onClick={props.click}>{props.count}</div>
-//   )
-// }) 
-class Middle extends React.PureComponent {
-  render () {
-    const  { click, count } = this.props
-    return (
-      <div onClick={ click }>{ count}</div>
-    )
-  }
-}
+const Middle = memo(forwardRef((props, ref) => {
+  console.log('middle component render !')
+  return (
+    <div onClick={props.click} ref={ref}>{props.count}</div>
+  )
+})) 
+// class Middle extends React.PureComponent {
+//   render () {
+//     const  { click, count } = this.props
+//     return (
+//       <div onClick={ click }>{ count}</div>
+//     )
+//   }
+// }
 
-function Pool () {
+function Ref () {
   const [count, setCount] = useState(12)
   const double = useMemo(()=> {
     return count * 2
-  },[count == 15])
+  },[count === 15])
 
   let it = useRef()
   const handleClick = useCallback(()=> {
@@ -63,4 +63,4 @@ function Pool () {
 }
 
 
-export default Pool;
+export default Ref;

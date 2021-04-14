@@ -1,18 +1,18 @@
 import React, { memo } from 'react'
 
-class Baz extends React.PureComponent {
+class A extends React.PureComponent {
   render () {
-    console.log('class Component Foo render')
+    console.log('class component A render')
     return (
       <p>{this.props.n}</p>
     )
   }
 }
 
-const Bar = memo(
+const B = memo(
   function (props) {
     const { n } = props
-    console.log('function Component Bar render')
+    console.log('function component B render')
     return (
       <div>{n}</div>
     )
@@ -25,7 +25,14 @@ const Bar = memo(
   }
 )
 
-class MemoComponent extends React.Component {
+const C = function ({ n }) {
+  console.log('function component C render')
+  return (
+    <div>{ n }</div>
+  )
+}
+
+class Memo extends React.Component {
   constructor () {
     super()
     this.state = {
@@ -36,14 +43,15 @@ class MemoComponent extends React.Component {
   render () {
     const { n,m } = this.state
     return (
-      <React.Fragment>
+      <>
         <button onClick={()=> this.setState({ n: n+1 })}>Class Component Btn:{n}</button>
         <button onClick={()=> this.setState({ m: m+1 })}>function Component Btn:{m}</button>
-        <Baz n={n}/>
-        <Bar n={m}/>
-      </React.Fragment>
+        <A n={n}/>
+        <B n={m}/>
+        <C n={m}/>
+      </>
     )
   }
 }
 
-export default MemoComponent
+export default Memo

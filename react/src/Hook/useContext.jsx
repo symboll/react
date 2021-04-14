@@ -1,18 +1,23 @@
 import React, { useState, useContext, createContext } from 'react'
 
 const Battery = createContext()
+const About = createContext()
 
-function Cross () {
+function Context () {
   const [count, setCount] = useState(23)
+  const [name, setName] = useState('zhangsan')
   return (
-    <React.Fragment>
-      <button onClick={()=> setCount(count+ 1)}>Btn</button>
-      <p>{count}</p>
-
+    <>
+      <button onClick={()=> setCount(count+ 1)}>Set Count</button>
+      <button onClick={()=> setName(name + 'a')}>Set Name</button>
+      <p>count: { count }</p>
+      <p>name: { name }</p>
       <Battery.Provider value={count}>
-        <Middle />
+        <About.Provider value={name}>
+          <Middle />
+        </About.Provider>
       </Battery.Provider>
-    </React.Fragment>
+    </>
   )
 }
 
@@ -22,6 +27,12 @@ function Middle() {
 
 function Child () {
   const count = useContext(Battery)
-  return <div>{ count}</div>
+  const name = useContext(About)
+  return (
+    <>
+      <div> count: { count }</div>
+      <div> name: { name }</div>
+    </>
+  )
 }
-export default Cross;
+export default Context;

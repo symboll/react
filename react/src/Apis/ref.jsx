@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-class RefComponent extends Component {
+class Ref extends Component {
 
 
   constructor () {
@@ -13,7 +13,8 @@ class RefComponent extends Component {
   }
   render () {
     return <div>
-      <Input ref={this.inputRef} />
+      {/* <Input ref={this.inputRef} /> */}
+      <input type="text" ref={this.inputRef}/>
       <button onClick={this.handleSubmit}>提交</button>
     </div>
   }
@@ -21,7 +22,6 @@ class RefComponent extends Component {
 
 
 const Input = React.forwardRef((props, ref)=> {
-  console.log()
   return <input type="text" ref={ref}/>
 })
-export default RefComponent
+export default Ref

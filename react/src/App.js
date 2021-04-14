@@ -7,11 +7,12 @@ import store from './store'
 // import TodoList from './T_redux'
 import TodoList from './T_react-redux'
 // import TodoList from './T_immutable';
+
 import Hoc from './Hoc'
-import Newfeatures from './Newfeatures'
+import Apis from './Apis'
 import Hook from './Hook'
 import EventEmitter from './eventEmitter'
-import Test from './Test'
+import ScrollNews from './Transition/scrollnews'
 function App() {
   return (
     <Provider store={store}>
@@ -20,9 +21,9 @@ function App() {
           <Route path="/" exact component={TodoList} />
           <Route path='/hoc' component={Hoc} />
           <Route path='/hook' component={Hook} />
-          <Route path='/newfeatures' component={Newfeatures} />
+          <Route path='/apis' component={Apis} />
           <Route path='/eventEmitter' component={ EventEmitter } />
-          <Route path='/test' component={ Test } />
+          <Route path='/scrollnews' component={ ScrollNews } />
         </Switch>
       </BrowserRouter>
     </Provider>

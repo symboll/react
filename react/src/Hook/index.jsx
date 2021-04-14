@@ -1,21 +1,26 @@
 import React from 'react'
-import Count from './useState'
-import Sider from './useEffect'
-import Cross from './useContext'
-import Optimi from './useMemo'
-import Pool from './useRef'
+import Counter from './useState'
+import Effect from './useEffect'
+import Context from './useContext'
+import Memo from './useMemo'
+import Ref from './useRef'
 import Custom from './custom'
 
 function Hook () {
   return (
-    <React.Fragment>
-      {/* <Count />
-      <Sider />
-      <Cross />
-      <Optimi /> 
-      <Pool /> */}
+    <>
+      <Counter />
+      <hr />
+      <Effect />
+      <hr />
+      <Context />
+      <hr />
+      <Memo /> 
+      <hr />
+      <Ref />
+      <hr />
       <Custom />
-    </React.Fragment>
+    </>
   )
 }
 

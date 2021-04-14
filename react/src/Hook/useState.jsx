@@ -1,27 +1,30 @@
 import React, { useState, memo } from 'react'
 
-function Count () {
-  const [count, setCount] = useState(10)
-  console.log('Count Component render')
+function Counter () {
+  const [m, setM] = useState(10)
+  const [n, setN] = useState(20)
+  console.log('Count component render')
   return (
     <React.Fragment>
-      <button onClick={()=> setCount( count+1 )}>Button</button>
-      <p>{count}</p>
+      <button onClick={()=> setM( m + 1 )}>change M</button>
+      <button onClick={()=> setN( n + 1 )}>change N</button>
+      <p>M: { m } </p>
+      <p>N: { n }</p>
       <Child 
-        number= {100}
+        m = {m}
       />
     </React.Fragment>
   )
 }
 
 const Child = memo(function(props) {
-  const [number, setNumber] = useState(()=> props.number)
-  console.log('child Component render')
+  const [number, setNumber] = useState(()=> props.m)
+  console.log('child component render')
   return (
     <React.Fragment>
-      <button onClick={()=> setNumber( number+1 )}>child Button</button>
-      <p>{number}</p>
+      <button onClick={()=> setNumber( number+1 )}>child Button change M</button>
+      <p>M: {number}</p>
     </React.Fragment>
   )
 }) 
-export default Count
+export default Counter

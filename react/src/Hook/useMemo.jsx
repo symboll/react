@@ -7,11 +7,11 @@ const Middle = memo(function (props) {
   )
 }) 
 
-function Optimi () {
+function Memo () {
   const [count, setCount] = useState(12)
   const double = useMemo(()=> {
     return count * 2
-  },[count == 15])
+  },[count === 15])
   // []只执行一次
   // 调用时机和useEffect 不一样。 useEffect 在 渲染之后运行。
   // useMemo 有返回值。 在渲染期间完成。运行结果参与渲染。
@@ -37,4 +37,4 @@ function Optimi () {
 }
 
 
-export default Optimi
+export default Memo
