@@ -9,7 +9,7 @@ import TodoList from './T_react-redux'
 // import TodoList from './T_immutable';
 
 import Hoc from './Hoc'
-import Apis from './Apis'
+import Features from './features'
 import Hook from './Hook'
 import EventEmitter from './eventEmitter'
 import ScrollNews from './Transition/scrollnews'
@@ -21,7 +21,7 @@ function App() {
           <Route path="/" exact component={TodoList} />
           <Route path='/hoc' component={Hoc} />
           <Route path='/hook' component={Hook} />
-          <Route path='/apis' component={Apis} />
+          <Route path='/features' component={Features} />
           <Route path='/eventEmitter' component={ EventEmitter } />
           <Route path='/scrollnews' component={ ScrollNews } />
         </Switch>

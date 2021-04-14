@@ -6,7 +6,7 @@ import Lazy from './lazy'
 import Memo from './memo'
 import Ref from './ref'
 
-function Apis () {
+function Features () {
   return (
     <>
       <Content />
@@ -22,4 +22,4 @@ function Apis () {
   )
 }
 
-export default Apis;
+export default Features;
