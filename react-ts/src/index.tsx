@@ -4,9 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const defaultContenxtValue = {
+  username: '阿莱克斯'
+}
+
+export const appContext = React.createContext(defaultContenxtValue)
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <appContext.Provider value={defaultContenxtValue}>
+      <App />
+    </appContext.Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

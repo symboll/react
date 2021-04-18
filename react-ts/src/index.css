@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'lunabar';
+  src: url('./assets/font/lunabar.ttf');
+}
+@font-face {
+  font-family: 'mzd';
+  src: url('./assets/font/mzd.ttf');
+}
