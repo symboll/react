@@ -30,6 +30,7 @@ function Ref () {
   const [count, setCount] = useState(12)
   const double = useMemo(()=> {
     return count * 2
+  // eslint-disable-next-line
   },[count === 15])
 
   let it = useRef()

@@ -20,7 +20,7 @@ class Ref extends Component {
   }
 }
 
-
+// eslint-disable-next-line
 const Input = React.forwardRef((props, ref)=> {
   return <input type="text" ref={ref}/>
 })

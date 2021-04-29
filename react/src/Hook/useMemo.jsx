@@ -11,6 +11,7 @@ function Memo () {
   const [count, setCount] = useState(12)
   const double = useMemo(()=> {
     return count * 2
+  // eslint-disable-next-line
   },[count === 15])
   // []只执行一次
   // 调用时机和useEffect 不一样。 useEffect 在 渲染之后运行。
