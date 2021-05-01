@@ -12,7 +12,7 @@ import Hoc from './Hoc'
 import Features from './features'
 import Hook from './Hook'
 import EventEmitter from './eventEmitter'
-
+import VideoDemo from './wx/video'
 import './App.less';
 function App() {
   return (
@@ -24,6 +24,7 @@ function App() {
           <Route path='/hook' component={Hook} />
           <Route path='/features' component={Features} />
           <Route path='/eventEmitter' component={ EventEmitter } />
+          <Route path='/video' component={ VideoDemo } />
         </Switch>
       </BrowserRouter>
     </Provider>

@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
-import './app.css'
+import { useState, useEffect, useRef, forwardRef, memo } from 'react';
+import './video.less'
 
 const videList = [
   {
@@ -43,44 +43,39 @@ function App() {
   }
 
   const handleChange = (item, ind) =>  {
-    const index = list.findIndex(i => i.id === item.id)
-    const main = list[0]
-    const copy = [...list]
-    copy[index] = main
-    copy[0] = item
 
+    let tempCurrentTime = currentVideoTime.current.currentTime
+    let tempSrc = currentVideoTime.current.src
+
+    currentVideoTime.current.src = siderVideTime.current.childNodes[ind].src
+    currentVideoTime.current.currentTime = siderVideTime.current.childNodes[ind].currentTime
     
-    // let temp = currentVideoTime.current.currentTime
-    // console.log('temp==>',temp)
-    // console.log('ind-->',ind)
-    // currentVideoTime.current.currentTime = siderVideTime.current.childNodes[ind].currentTime
+    siderVideTime.current.childNodes[ind].src = tempSrc
+    siderVideTime.current.childNodes[ind].currentTime = tempCurrentTime
 
-    // siderVideTime.current.childNodes[ind].currentTime = temp
-    setList(copy)
   }
-
-
-  if(list[0] && list[0].url) {
+  console.log('render !')
     return (
       <div className="video_wrap">
         <div className="video_main">
-           <video 
-              ref={currentVideoTime}
-              src={list[0].url}  
-              controls 
-              height="400" width="450">
-           </video>
+          <VideoChild
+            ref={currentVideoTime}
+            src={ list[0] && list[0].url}  
+            controls
+            width="480"
+            height="270"
+          />
         </div>
         <div className="vide_sider" ref={siderVideTime}>
           {
             list.filter((_, index) => index > 0).map((item,index) => {
-              return <video 
-                key={item.id}
-                src={item.url}
-                autoPlay
+              return <VideoChild 
+                width="120"
+                height="67"
+                key={item.id}  
+                src={item.url} 
+                // ref={siderVideTime?.current?.childNodes[index]}
                 muted
-                height="100"
-                width="150"
                 onClick={() => handleChange(item, index)}
               />
             })
@@ -88,10 +83,30 @@ function App() {
         </div>
       </div>
     );
-  }
-
-  return <div>loading</div>
-  
 }
+
+const VideoChild = memo(forwardRef((props, ref) => {
+  const { muted, height, width, controls, src='', onClick =() => {} } = props
+  // console.log('==>',ref?.current?.currentTime)
+  if(src !=='') {
+    return (
+      <>
+        <video 
+          width={width}
+          height={height}
+          ref={ref}
+          src={src}
+          autoPlay
+          muted={muted}
+          controls={controls}
+          onClick={onClick}
+        />
+      </>
+    )
+  }
+  return <div>loading</div>
+})) 
+
+
 
 export default App;
