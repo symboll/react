@@ -43,15 +43,29 @@ function App() {
   }
 
   const handleChange = (item, ind) =>  {
-
-    let tempCurrentTime = currentVideoTime.current.currentTime
-    let tempSrc = currentVideoTime.current.src
-
-    currentVideoTime.current.src = siderVideTime.current.childNodes[ind].src
-    currentVideoTime.current.currentTime = siderVideTime.current.childNodes[ind].currentTime
     
-    siderVideTime.current.childNodes[ind].src = tempSrc
-    siderVideTime.current.childNodes[ind].currentTime = tempCurrentTime
+    console.log(siderVideTime.current.childNodes[ind].getBoundingClientRect())
+
+    const sideNode = siderVideTime.current.childNodes[ind]
+    const mainNode = currentVideoTime.current
+
+    
+    sideNode.classList.add(`tarnaslate_side_${1+ ind}`)
+    mainNode.classList.add(`tarnaslate_main_${1+ ind}`)
+
+    setTimeout(()=> {
+      sideNode.classList.remove(`tarnaslate_side_${1+ ind}`)
+      mainNode.classList.remove(`tarnaslate_main_${1+ ind}`)
+
+      let tempCurrentTime = currentVideoTime.current.currentTime
+      let tempSrc = currentVideoTime.current.src
+
+      currentVideoTime.current.src = siderVideTime.current.childNodes[ind].src
+      currentVideoTime.current.currentTime = siderVideTime.current.childNodes[ind].currentTime
+
+      siderVideTime.current.childNodes[ind].src = tempSrc
+      siderVideTime.current.childNodes[ind].currentTime = tempCurrentTime
+    }, 800)
 
   }
   console.log('render !')

@@ -14,5 +14,57 @@
   flex: 1;
   height: 100%;
   background: darksalmon;
-  overflow: scroll;
+  // overflow: scroll;
+}
+
+
+.tarnaslate_main_1{
+  .keyframesFunction(animationmain1, 300px, -100px, 0.25);
+  animation: animationmain1 .8s ease-in forwards;
+}
+
+.tarnaslate_side_1{
+  .keyframesFunction(animationside1, -300px, 100px, 4);
+  animation: animationside1 .8s ease-in forwards;
+}
+
+// + 70
+.tarnaslate_main_2{
+  .keyframesFunction(animationmain2, 300px, -30px, 0.25);
+  animation: animationmain2 .8s ease-in forwards;
+}
+// -70
+.tarnaslate_side_2{
+  .keyframesFunction(animationside2, -300px, 30px, 4);
+  animation: animationside2 .8s ease-in forwards;
+}
+
+// + 70
+.tarnaslate_main_3{
+  .keyframesFunction(animationmain3, 300px, 40px, 0.25);
+  animation: animationmain3 .8s ease-in forwards;
+}
+// -70
+.tarnaslate_side_3{
+  .keyframesFunction(animationside3, -300px, -40px, 4);
+  animation: animationside3 .8s ease-in forwards;
+}
+
+// +70
+.tarnaslate_main_4{
+  .keyframesFunction(animationmain4, 300px, 110px, 0.25);
+  animation: animationmain4 .8s ease-in forwards;
+}
+// -70
+.tarnaslate_side_4{
+  .keyframesFunction(animationside4, -300px, -110px, 4);
+  animation: animationside4 .8s ease-in forwards;
+}
+
+.keyframesFunction (@name, @x, @y, @scale){
+  @keyframes @name{
+    100% {
+      transform: translate(@x, @y) scale(@scale);
+    }
+  }      
 }
