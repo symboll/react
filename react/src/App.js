@@ -13,6 +13,7 @@ import Features from './features'
 import Hook from './Hook'
 import EventEmitter from './eventEmitter'
 import VideoDemo from './wx/video'
+import CustomDatePicker from './wx/customDatePicker'
 import './App.less';
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path='/features' component={Features} />
           <Route path='/eventEmitter' component={ EventEmitter } />
           <Route path='/video' component={ VideoDemo } />
+          <Route path='/antd' component={ CustomDatePicker } />
         </Switch>
       </BrowserRouter>
     </Provider>
