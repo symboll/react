@@ -14,6 +14,7 @@ import Hook from './Hook'
 import EventEmitter from './eventEmitter'
 import VideoDemo from './wx/video'
 import CustomDatePicker from './wx/customDatePicker'
+import IconList from './wx/icon'
 import './App.less';
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path='/eventEmitter' component={ EventEmitter } />
           <Route path='/video' component={ VideoDemo } />
           <Route path='/antd' component={ CustomDatePicker } />
+          <Route path='/icon' component={IconList } />
         </Switch>
       </BrowserRouter>
     </Provider>
