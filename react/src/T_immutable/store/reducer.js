@@ -1,5 +1,5 @@
 import * as Types from './actionTypes'
-import {fromJS } from 'immutable'
+import { fromJS } from 'immutable'
 
 const defaultState =fromJS({
   value: '',

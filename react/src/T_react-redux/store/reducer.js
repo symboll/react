@@ -5,8 +5,8 @@ const defaultState = {
   asyncInfo: []
 }
 
-export default (state = defaultState, action)=> {
-
+// eslint-disable-next-line
+export default (state = defaultState, action) => {
   switch (action.type) {
     case Types.ADD_TODO_ITEM :{
       const list = [...state.list]

@@ -12,10 +12,7 @@ import Hoc from './Hoc'
 import Features from './features'
 import Hook from './Hook'
 import EventEmitter from './eventEmitter'
-import VideoDemo from './wx/video'
-import CustomDatePicker from './wx/customDatePicker'
-import IconList from './wx/icon'
-import TabBarDemo from './wx/tabbar'
+import AnimationDemo from './Animation'
 import './App.less';
 function App() {
   return (
@@ -27,10 +24,7 @@ function App() {
           <Route path='/hook' component={Hook} />
           <Route path='/features' component={Features} />
           <Route path='/eventEmitter' component={ EventEmitter } />
-          <Route path='/video' component={ VideoDemo } />
-          <Route path='/antd' component={ CustomDatePicker } />
-          <Route path='/icon' component={IconList } />
-          <Route path='/tabbar' component={TabBarDemo } />
+          <Route path='/animation' component={ AnimationDemo } />
         </Switch>
       </BrowserRouter>
     </Provider>
